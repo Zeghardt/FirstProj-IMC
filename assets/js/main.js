@@ -65,3 +65,55 @@ function setResultado(msg, isValid) { //3 passo
     resultado.appendChild(p);
 
 }
+
+function relogio() {
+    function criaHoraDosSegundos(segundos) {
+        const data = new Date(segundos * 1000)
+        return data.toLocaleTimeString('pt-BR', {
+            hour12: false,
+            timeZone: 'GMT'
+        });
+    }
+
+    const relogio = document.querySelector('.relogio');
+    // const iniciar = document.querySelector('.iniciar');
+    // const pausar = document.querySelector('.pausar');
+    // const zerar = document.querySelector('.zerar');
+    let segundos = 0;
+    let timer;
+
+    function IniciaRelogio() {
+        timer = setInterval(function () {
+            segundos++;
+            relogio.innerHTML = criaHoraDosSegundos(segundos);
+        }, 1000);
+    }
+
+    document.addEventListener('click', function (evento) {
+        const elemento = evento.target;
+
+        if (elemento.classList.contains('zerar')) {
+            clearInterval(timer);
+            relogio.classList.remove('pausado')
+            relogio.innerHTML = '00:00:00';
+            segundos = 0;
+            console.log('Você clicou em Zerar')
+        }
+
+        if (elemento.classList.contains('iniciar')) {
+            relogio.classList.remove('pausado')
+            clearInterval(timer);
+            IniciaRelogio()
+            console.log('Você clicou em Iniciar')
+        }
+
+        if (elemento.classList.contains('pausar')) {
+            clearInterval(timer);
+            relogio.classList.add('pausado')
+            console.log('Você clicou em Pausar')
+        }
+
+    });
+}
+
+relogio();

@@ -72,3 +72,11 @@ form button:hover {
 .bad {
     background: rgb(218, 81, 81);
 }
+
+.relogio {
+    font-size: 3em;
+}
+
+.pausado {
+    color: red
+}
