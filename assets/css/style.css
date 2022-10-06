@@ -29,6 +29,25 @@ body {
 
 }
 
+.container2 {
+    max-width: 640px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.container3 {
+    max-width: 640px;
+    margin:50px auto ;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+
 form input,
 form label,
 form button {
@@ -79,4 +98,14 @@ form button:hover {
 
 .pausado {
     color: red
+}
+
+.global-nav-portifolio {
+    max-width: 1px auto;
+    margin: 0px auto;
+    background: #fff;
+    padding: 5px;
+    font-size: 2em;
+    line-height: 2em;
+    color: var(--primary-color)
 }
